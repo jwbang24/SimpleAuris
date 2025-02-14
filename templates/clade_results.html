@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Clade Analysis Results{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Clade Analysis Results</h1>
+
+    <!-- 클레이드 결과 요약 -->
+    <div class="alert text-center" style="background-color: rgba(155, 89, 182, 0.2); border: 1px solid #9b59b6; color: #4B0082;">
+        {% if clade_results and clade_results|length > 0 %}
+        {% for clade_result in clade_results %}
+        {% set best_result = clade_result.split() %}
+        {% set query_genome = best_result[0].replace('uploads/', '').replace('.fna', '').replace('.fasta', '') %}
+        {% set ref_genome = best_result[1].split('/')[-1].replace('.fna', '').replace('.fasta', '').split('-', 1)[-1] %}
+        {% set clade_mapping = {
+            'B8441': 'I',
+            'B11220': 'II',
+            'B11221': 'III',
+            'B11245': 'IV',
+            'B18474': 'V',
+            'F03485': 'VI'
+        } %}
+        {% set clade_number = clade_mapping.get(ref_genome, 'Unknown') %}
+        {% set ani_value = best_result[2] %}
+        
+        <p>
+            The query genome <b>{{ query_genome }}</b> shows a genomic similarity of <b>{{ ani_value }}%</b>
+            with reference genome <b>{{ ref_genome }}</b> among the 6 Candida auris reference genomes.
+            Therefore, it belongs to <b>Clade {{ clade_number }}</b>.
+        </p>
+        {% endfor %}
+        {% else %}
+        <p>No clade results found. Please try again.</p>
+        {% endif %}
+    </div>
+
+    <!-- 전체 ANI 결과 표 -->
+    {% if results and results|length > 0 %}
+    <table class="table table-bordered table-hover align-middle mt-4">
+        <thead class="table-light">
+            <tr class="text-center">
+                <th>Query Genome</th>
+                <th>Reference Genome</th>
+                <th>Clade</th>
+                <th>ANI (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            {% set data = result.split() %}
+            {% if data|length >= 3 %}
+            {% set query_genome = data[0].replace('uploads/', '').replace('.fna', '').replace('.fasta', '') %}
+            {% set ref_genome = data[1].split('/')[-1].replace('.fna', '').replace('.fasta', '').split('-', 1)[-1] %}
+            {% set ani_value = data[2] %}
+            
+            <!-- 클레이드 매핑 규칙 -->
+            {% set clade_mapping = {
+                'B8441': 'I',
+                'B11220': 'II',
+                'B11221': 'III',
+                'B11245': 'IV',
+                'B18474': 'V',
+                'F03485': 'VI'
+            } %}
+            <tr class="text-center">
+                <td>{{ query_genome }}</td>
+                <td>{{ ref_genome }}</td>
+                <td>{{ clade_mapping.get(ref_genome, 'Unknown') }}</td>
+                <td>{{ ani_value }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-center mt-4">No ANI results available. Please run the analysis again.</p>
+    {% endif %}
+
+    <a href="/" class="btn btn-primary mt-4 w-100">Run Another Analysis</a>
+</div>
+{% endblock %}
+

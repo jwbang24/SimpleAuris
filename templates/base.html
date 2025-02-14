@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SimpleAuris Web Interface{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif; /* 새로운 글씨체 적용 */
+        }
+
+        .navbar {
+            background-color: #4B0082; /* 딥 바이올렛 */
+        }
+
+        .btn-primary, .btn-example {
+            background-color: #4B0082; /* 딥 바이올렛 */
+            color: white; /* 흰색 텍스트 */
+        }
+
+        .btn-primary:hover, .btn-example:hover {
+            background-color: #3A006B; /* 더 어두운 바이올렛 */
+            color: white; /* 흰색 텍스트 */
+        }
+
+        .footer-logo {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 공통 네비게이션 바 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">SimpleAuris</a>
+        </div>
+    </nav>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="container mt-5">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- 공통 푸터 -->
+    <footer class="mt-5 text-center text-muted">
+        <p>&copy; 2024 SimpleAuris Web Interface | Microbial Genomics Laboratory</p>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="footer-logo" width="100">
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

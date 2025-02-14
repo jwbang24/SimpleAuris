@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to SimpleAuris{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h1>Welcome to SimpleAuris Web Interface</h1>
+    <p class="lead">Upload your query genomes to perform ANI analysis and clade classification of <i>Candidozyma (Candida) auris</i>.</p>
+</div>
+
+<div class="card shadow-lg">
+    <div class="card-body">
+        <h5 class="card-title">Upload Your Query Files</h5>
+        <p class="card-text" style="margin-bottom: 0;">
+            Select one or more nucleotide genome files in FASTA format to start the analysis.
+        </p>
+        <p class="card-text" style="margin-top: 0; font-weight: bold;">
+            Note: File names must not contain spaces.
+        </p>
+        <form action="/fastani" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="query" class="form-label">Query Files:</label>
+                <input type="file" name="query" multiple class="form-control" id="query" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">Run!</button>
+        </form>
+
+        <!-- Example Genome Download Section -->
+        <div class="mt-4 text-center">
+            <h6>Need an Example?</h6>
+            <p>Download an example genome FASTA file (<i>Candidozyma auris</i> CA-AM1, Clade I) to test the analysis.</p>
+            <a href="{{ url_for('static', filename='example_genome.fasta') }}" class="btn btn-example btn-sm" download>
+                Download Example Genome
+            </a>
+        </div>
+
+        <!-- Reference Genome Download Section -->
+        <div class="mt-4 text-center">
+            <h6>Need Reference Genomes?</h6>
+            <p>Download all 6 reference genome FASTA files.</p>
+            <a href="{{ url_for('static', filename='reference_genomes.zip') }}" class="btn btn-example btn-sm" download>
+                Download Reference Genomes
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

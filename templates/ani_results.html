@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}ANI Results{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">ANI Results</h1>
+
+    <!-- 테이블 형식으로 ANI 결과 표시 -->
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-light">
+            <tr class="text-center">
+                <th>Query Genome</th>
+                <th>Reference Genome</th>
+                <th>Clade</th>
+                <th>ANI (%)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            {% set data = result.split() %}
+            {% set query_genome = data[0].replace('uploads/', '').replace('.fna', '').replace('.fasta', '') %}
+            {% set ref_genome = data[1].split('/')[-1].replace('.fna', '').replace('.fasta', '').split('-', 1)[-1] %}
+            {% set ani_value = data[2] %}
+            
+            <!-- 클레이드 매핑 규칙 -->
+            {% set clade_mapping = {
+                'B8441': 'I',
+                'B11220': 'II',
+                'B11221': 'III',
+                'B11245': 'IV',
+                'B18474': 'V',
+                'F03485': 'VI'
+            } %}
+            <tr class="text-center">
+                <td>{{ query_genome }}</td>
+                <td>{{ ref_genome }}</td>
+                <td>{{ clade_mapping.get(ref_genome, 'Unknown') }}</td>
+                <td>{{ ani_value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="/clade" method="post">
+        <button type="submit" class="btn btn-primary mt-4">Show Clade Results</button>
+    </form>
+</div>
+{% endblock %}
+

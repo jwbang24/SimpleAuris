@@ -1,0 +1,108 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.100.18:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 126-324-691
+10.14.73.222 - - [30/Dec/2024 16:35:47] "POST /fastani HTTP/1.1" 200 -
+>>>>>>>>>>>>>>>>>>
+Reference = [ref/6-isolateA.fna, ref/5-B18474.fna, ref/3-B11221.fna, ref/1-B8441.fna, ref/4-B11245.fna, ref/2-B11220.fna]
+Query = [uploads/0151_SRR10461239.fasta]
+Kmer size = 16
+Fragment length = 3000
+Threads = 1
+ANI output file = outputs/0151_SRR10461239.fasta_output.txt
+Sanity Check  = 0
+>>>>>>>>>>>>>>>>>>
+INFO [thread 0], skch::main, Count of threads executing parallel_for : 1
+INFO [thread 0], skch::Sketch::build, window size for minimizer sampling  = 24
+10.14.73.222 - - [30/Dec/2024 16:35:50] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::Sketch::build, minimizers picked from reference = 5961555
+10.14.73.222 - - [30/Dec/2024 16:35:53] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:35:56] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::Sketch::index, unique minimizers = 1599215
+INFO [thread 0], skch::Sketch::computeFreqHist, Frequency histogram of minimizers = (1, 432096) ... (2574, 1)
+INFO [thread 0], skch::Sketch::computeFreqHist, consider all minimizers during lookup.
+INFO [thread 0], skch::main, Time spent sketching the reference : 10.2852 sec
+INFO [thread 0], skch::main, Start Map 1
+10.14.73.222 - - [30/Dec/2024 16:35:59] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:02] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:05] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:08] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:11] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:14] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:17] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:20] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:23] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:26] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:29] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:32] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:35] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:38] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:41] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:44] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:47] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:50] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:53] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:36:56] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::main, Time spent mapping fragments in query #1 : 58.8545 sec
+INFO [thread 0], skch::main, Time spent post mapping : 0.0089054 sec
+INFO [thread 0], skch::main, ready to exit the loop
+INFO, skch::main, parallel_for execution finished
+10.14.73.222 - - [30/Dec/2024 16:36:59] "GET /status HTTP/1.1" 200 -
+10.14.73.222 - - [30/Dec/2024 16:36:59] "GET /results HTTP/1.1" 200 -
+10.14.73.222 - - [30/Dec/2024 16:37:03] "POST /clade HTTP/1.1" 200 -
+10.14.73.222 - - [30/Dec/2024 16:41:08] "GET / HTTP/1.1" 200 -
+10.14.73.222 - - [30/Dec/2024 16:41:33] "POST /fastani HTTP/1.1" 200 -
+>>>>>>>>>>>>>>>>>>
+Reference = [ref/6-isolateA.fna, ref/5-B18474.fna, ref/3-B11221.fna, ref/1-B8441.fna, ref/4-B11245.fna, ref/2-B11220.fna]
+Query = [uploads/0151_SRR10461239.fasta]
+Kmer size = 16
+Fragment length = 3000
+Threads = 1
+ANI output file = outputs/0151_SRR10461239.fasta_output.txt
+Sanity Check  = 0
+>>>>>>>>>>>>>>>>>>
+INFO [thread 0], skch::main, Count of threads executing parallel_for : 1
+INFO [thread 0], skch::Sketch::build, window size for minimizer sampling  = 24
+10.14.73.222 - - [30/Dec/2024 16:41:36] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::Sketch::build, minimizers picked from reference = 5961555
+10.14.73.222 - - [30/Dec/2024 16:41:39] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:41:42] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::Sketch::index, unique minimizers = 1599215
+INFO [thread 0], skch::Sketch::computeFreqHist, Frequency histogram of minimizers = (1, 432096) ... (2574, 1)
+INFO [thread 0], skch::Sketch::computeFreqHist, consider all minimizers during lookup.
+INFO [thread 0], skch::main, Time spent sketching the reference : 10.4458 sec
+INFO [thread 0], skch::main, Start Map 1
+10.14.73.222 - - [30/Dec/2024 16:41:45] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:41:48] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+10.14.73.222 - - [30/Dec/2024 16:41:51] "[35m[1mGET /status HTTP/1.1[0m" 202 -
+INFO [thread 0], skch::main, Time spent mapping fragments in query #1 : 59.6189 sec
+INFO [thread 0], skch::main, Time spent post mapping : 0.00785641 sec
+INFO [thread 0], skch::main, ready to exit the loop
+INFO, skch::main, parallel_for execution finished
+>>>>>>>>>>>>>>>>>>
+Reference = [ref/6-isolateA.fna, ref/5-B18474.fna, ref/3-B11221.fna, ref/1-B8441.fna, ref/4-B11245.fna, ref/2-B11220.fna]
+Query = [uploads/0154_SRR10461242.fasta]
+Kmer size = 16
+Fragment length = 3000
+Threads = 1
+ANI output file = outputs/0154_SRR10461242.fasta_output.txt
+Sanity Check  = 0
+>>>>>>>>>>>>>>>>>>
+INFO [thread 0], skch::main, Count of threads executing parallel_for : 1
+INFO [thread 0], skch::Sketch::build, window size for minimizer sampling  = 24
+INFO [thread 0], skch::Sketch::build, minimizers picked from reference = 5961555
+INFO [thread 0], skch::Sketch::index, unique minimizers = 1599215
+INFO [thread 0], skch::Sketch::computeFreqHist, Frequency histogram of minimizers = (1, 432096) ... (2574, 1)
+INFO [thread 0], skch::Sketch::computeFreqHist, consider all minimizers during lookup.
+INFO [thread 0], skch::main, Time spent sketching the reference : 11.4832 sec
+INFO [thread 0], skch::main, Start Map 1
+INFO [thread 0], skch::main, Time spent mapping fragments in query #1 : 58.2653 sec
+INFO [thread 0], skch::main, Time spent post mapping : 0.00865776 sec
+INFO [thread 0], skch::main, ready to exit the loop
+INFO, skch::main, parallel_for execution finished

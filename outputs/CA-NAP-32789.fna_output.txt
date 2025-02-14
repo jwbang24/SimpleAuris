@@ -1,0 +1,6 @@
+uploads/CA-NAP-32789.fna	ref/3-B11221.fna	99.9964	4113	4141
+uploads/CA-NAP-32789.fna	ref/1-B8441.fna	99.5503	4092	4141
+uploads/CA-NAP-32789.fna	ref/2-B11220.fna	99.3332	3999	4141
+uploads/CA-NAP-32789.fna	ref/6-F03485.fna	98.4193	4099	4141
+uploads/CA-NAP-32789.fna	ref/4-B11245.fna	98.322	4066	4141
+uploads/CA-NAP-32789.fna	ref/5-B18474.fna	97.2994	4073	4141

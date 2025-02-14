@@ -1,0 +1,6 @@
+ref/5-B18474.fna
+ref/3-B11221.fna
+ref/1-B8441.fna
+ref/4-B11245.fna
+ref/2-B11220.fna
+ref/6-F03485.fna

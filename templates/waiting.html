@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Processing...{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center">
+        <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <h1 class="mt-4">Running SimpleAuris...</h1>
+        <p class="lead">{{ message }}</p> <!-- 예상 소요 시간 메시지 표시 -->
+    </div>
+</div>
+<script>
+    function checkStatus() {
+        fetch("/status")
+            .then(response => {
+                if (response.status === 200) {
+                    window.location.href = "/results"; // 작업 완료 시 결과 페이지로 이동
+                }
+            });
+    }
+    setInterval(checkStatus, 3000); // 3초마다 상태 확인
+</script>
+{% endblock %}
