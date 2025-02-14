@@ -6,7 +6,7 @@ from threading import Thread
 app = Flask(__name__)
 
 # 디렉터리 설정
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER =  'uploads'
 REF_FOLDER = 'ref'
 OUTPUT_FOLDER = 'outputs'
 CLADES_FOLDER = 'clades'
